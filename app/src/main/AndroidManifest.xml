@@ -25,19 +25,21 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- <service android:name=".YourCallRedirectionServiceImplementation" -->
-        <!-- android:permission="android.permission.BIND_REDIRECTION_SERVICE"> -->
-        <!-- <intent-filter> -->
-        <!-- <action android:name="android.telecom.CallRedirectionService"/> -->
-        <!-- </intent-filter> -->
-        <!-- </service> -->
-        <receiver android:name=".Interceptor">
-            <intent-filter>
-                <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
+        </activity>
 
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </receiver>
+         <service android:name=".OutCallRedirectionService"
+         android:permission="android.permission.BIND_CALL_REDIRECTION_SERVICE">
+         <intent-filter>
+         <action android:name="android.telecom.CallRedirectionService"/>
+         </intent-filter>
+         </service>
+<!--        <receiver android:name=".Interceptor">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.NEW_OUTGOING_CALL" />-->
+
+<!--                <category android:name="android.intent.category.DEFAULT" />-->
+<!--            </intent-filter>-->
+<!--        </receiver>-->
     </application>
 
 </manifest>
